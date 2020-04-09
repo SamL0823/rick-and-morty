@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center my-4"> Search for Characters</h3>
+
+            <form [formGroup]="characterSearchForm" (ngSubmit)="sendToRMAPI(characterSearchForm.value)">
+                <div class="form-group">
+                    <input class="form-control" type="text" id="characterNameInput" aria-describedby="characterNameInput" placeholder="Please input a name"
+                    />
+                </div>
+                <div class="text-center">
+                    <button type="submit" lass="btn btn-success btn-md">
+                        Search Characters
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center my-4">Character Details</h3>
+            <div class="text-center" *ngIf="this.characterData?.name">
+                Name: {{this.characterData?.results.name}}
+            </div>
+        </div>
+    </div>
+</div>
