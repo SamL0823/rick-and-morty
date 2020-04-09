@@ -1,8 +1,16 @@
-<!-- <div *ngFor="let character of allCharacters">
-
-    <h2>{{character.info}}</h2>
-  
-  
-      <a href="{{article.url}}">Read full article</a>
-  
-  </div> -->
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Species</th>
+        <th>Type</th>
+        <th>Gender</th>
+    </tr>
+    <tr *ngFor="let character of allData?.results">
+        <td>{{character.name}}</td>
+        <td>{{character.status}}</td>
+        <td>{{character.species}}</td>
+        <td>{{character.type}}</td>
+        <td>{{character.gender}}</td>
+    </tr>
+</table>

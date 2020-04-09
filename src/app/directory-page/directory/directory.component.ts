@@ -10,14 +10,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./directory.component.css']
 })
 export class DirectoryComponent implements OnInit {
-  allCharacters: {}[];
 
-  constructor(private apiService: RmapiService) { }
+  constructor(private _rmapiservice: RmapiService) { }
+
+  allData: any;
 
   ngOnInit() {
-    this.apiService.getAllData().subscribe((data)=>{   
-      this.allCharacters = data['allCharacters'];
-      // console.log(this.allCharacters);
+    this._rmapiservice.getAllData().subscribe(data => {
+      this.allData = data;
+      console.log(this.allData);   
     })
     
   }
