@@ -1,3 +1,18 @@
 input{
     text-align: center;
 }
+li{
+    list-style: none;
+}
+
+#details{
+    text-align: left;
+    font-size: 100%;
+    
+}
+.characterRows{
+    display: flex;
+}
+.characterRows > div {
+    flex: 1;
+}

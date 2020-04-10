@@ -18,6 +18,6 @@ table, th , td {
   button{
     margin: 10px;
   }
-  div ul{
+  li{
     list-style: none;
   }
