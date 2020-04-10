@@ -11,3 +11,13 @@ table, th , td {
   table tr:nth-child(even) {
     background-color: #ffffff;
   }
+
+  .badge:hover{
+    cursor: pointer;
+  }
+  button{
+    margin: 10px;
+  }
+  div ul{
+    list-style: none;
+  }

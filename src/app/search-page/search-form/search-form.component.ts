@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RmapiService } from 'src/app/rmapi.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Character } from 'src/app/character';
 import { DirectoryComponent } from 'src/app/directory-page/directory/directory.component';
 
@@ -12,11 +12,12 @@ import { DirectoryComponent } from 'src/app/directory-page/directory/directory.c
 export class SearchFormComponent implements OnInit {
   public characterSearchForm: FormGroup;
   public characterData: any;
+  nameInput = new FormControl('');
   
 
   constructor(
     private formBuilder: FormBuilder,
-    private rmapiService: RmapiService
+    private _rmapiService: RmapiService
   ) { }
 
   ngOnInit() {
@@ -26,9 +27,9 @@ export class SearchFormComponent implements OnInit {
     
   }
 
-  sendToRMAPI(formValues) {
-    this.rmapiService.getAllData().subscribe(data => {
-      this.characterData = data;
+  getCharacterFromApi(formValues) {
+    this._rmapiService.getCharacter(this.nameInput.value).subscribe(data => {
+      this.characterData = data.results;
       console.log(this.characterData);
     });
 

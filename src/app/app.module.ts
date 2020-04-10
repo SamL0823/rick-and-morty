@@ -16,7 +16,6 @@ import { SearchFormComponent } from './search-page/search-form/search-form.compo
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DirectoryComponent } from './directory-page/directory/directory.component';
-import { DerpPipe } from './derp.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { DerpPipe } from './derp.pipe';
     FavoritesPageComponent,
     NavBarComponent,
     DirectoryComponent,
-    DerpPipe,
   ],
   imports: [
     BrowserModule,
