@@ -22,4 +22,12 @@ describe('NavBarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //I dont think i fully understand how to write unit tests :(
+  it('should render Rick and Morty logo', async(() => {
+    const fixture = TestBed.createComponent(NavBarComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('a.navbar-brand>img').src).toContain('/assets/logo.png');
+  }));
 });

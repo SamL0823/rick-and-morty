@@ -8,8 +8,12 @@
 
             <form [formGroup]="characterSearchForm" (ngSubmit)="getCharacterFromApi(characterSearchForm.value)">
                 <div class="form-group">
-                        <input class="form-control" type="text" id="characterNameInput" aria-describedby="characterNameInput" placeholder="Please input a name"
+                        <input id="nameInput" class="form-control" type="text" id="characterNameInput" aria-describedby="characterNameInput" placeholder="Please input a name"
                     [formControl]="nameInput"/>
+                    <!-- <div class="alert alert-danger" *ngIf="nameInput.invalid && (name.dirty || name.touched)"></div>
+                    <div *ngIf="nameInput.errors.required">
+                        Please enter a name
+                    </div> -->
                       
                 </div>
                 <div class="text-center">

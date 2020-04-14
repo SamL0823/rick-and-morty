@@ -4,4 +4,5 @@ export class Character {
     species: string;
     type: string;
     gender: string;
+    url: string;
 }

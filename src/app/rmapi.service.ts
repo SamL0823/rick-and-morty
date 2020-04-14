@@ -42,9 +42,9 @@ dataHold: any;
   }
  
   getPrevPage(): Observable<any> {
-    if(this.pageIterator === 1 ){
+    if(this.pageIterator === 1){
       this.pageIterator = 25;
-      this.apiData = this.httpclient.get(this.apiUrl + '?page=' + this.pageIterator.toString());   
+      this.apiData = this.httpclient.get(this.apiUrl + '?page=' + '25');   
       return this.apiData;
     }
     this.pageIterator = this.pageIterator - 1;

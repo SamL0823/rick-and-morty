@@ -1,0 +1,14 @@
+
+
+  .badge:hover{
+    cursor: pointer;
+  }
+  button{
+    margin: 10px;
+  }
+  li{
+    list-style: none;
+  }
+  .container{
+    width: auto;
+  }

@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { SearchFormComponent } from './search-form.component';
 
@@ -8,6 +10,11 @@ describe('SearchFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+      ReactiveFormsModule,
+      FormsModule,
+      HttpClientTestingModule
+  ],
       declarations: [ SearchFormComponent ]
     })
     .compileComponents();
@@ -22,4 +29,6 @@ describe('SearchFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render')
 });

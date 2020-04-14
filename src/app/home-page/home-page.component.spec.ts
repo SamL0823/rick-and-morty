@@ -22,4 +22,11 @@ describe('HomePageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render Rick and Morty logo', async(() => {
+    const fixture = TestBed.createComponent(HomePageComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('div.img-container>img').src).toContain('/assets/logo2.png');
+  }));
 });

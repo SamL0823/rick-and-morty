@@ -29,8 +29,10 @@ export class DirectoryComponent implements OnInit {
   }
 
   selectedCharacter: Character;
+
   onSelect(character: Character): void {
     this.selectedCharacter = character;
+    console.log(this.selectedCharacter.name);
   }
 
   onNextClick(){
@@ -44,7 +46,7 @@ export class DirectoryComponent implements OnInit {
       else{
         this.pageCounter = 1;
       }     
-      console.log(this.nextData);
+      console.log(this.pageCounter);
     })
   }
 

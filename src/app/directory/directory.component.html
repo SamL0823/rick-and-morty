@@ -1,0 +1,69 @@
+<!-- this table was copied from a tutorial found online and tweeked until it worked for me -->
+<!-- was just focused on getting data to the page at this point -->
+
+<!-- <table>
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Species</th>
+        <th>Type</th>
+        <th>Gender</th>
+    </tr>
+    <tr *ngFor="let character of allData?.results" (click)="onSelect(character)">
+        <td>{{character.name}}</td>
+        <td>{{character.status}}</td>
+        <td>{{character.species}}</td>
+        <td>{{character.type}}</td>
+        <td>{{character.gender}}</td>
+    </tr>
+</table> -->
+<h2 class="text-center">All Characters</h2>
+    <div class="container text-center" *ngIf="mainBool, else elseBlock">      
+        <div class= "text-center" *ngIf="click, else elseBlock">
+                <!-- the data we need is in a nested array called results -->
+              <li *ngFor="let character of allData?.results" (click)="onSelect(character)">
+                  <!-- i like the badges they look cute -->
+                <span class="badge">{{character.name}}</span>
+              </li>
+        </div>
+        <ng-template #elseBlock>
+                <!-- the data we need is in a nested array called results -->
+              <li *ngFor="let character of nextData?.results" (click)="onSelect(character)">
+                  <!-- i like the badges they look cute -->
+                <span class="badge">{{character.name}}</span>
+              </li>
+        </ng-template>
+    </div>
+        <ng-template #elseBlock>
+            <div class="text-center" *ngIf="click, else elseBlock">
+                    <!-- the data we need is in a nested array called results -->
+                  <li *ngFor="let character of allData?.results" (click)="onSelect(character)">
+                      <!-- i like the badges they look cute -->
+                    <span class="badge">{{character.name}}</span>
+                  </li>
+            </div>
+            <ng-template #elseBlock>
+                <div class="text-center">
+                    <!-- the data we need is in a nested array called results -->
+                    <li *ngFor="let character of prevData?.results" (click)="onSelect(character)">
+                        <!-- i like the badges they look cute -->
+                    <span class="badge">{{character.name}}</span>
+                    </li>
+                </div>                  
+            </ng-template>
+        </ng-template>
+    <div class="container text-center">
+        <div>
+            <button type="submit" class="btn btn-success btn-lg" (click)="onPrevClick()">
+                Prev
+            </button>
+            <span>{{pageCounter}}</span>
+            <button type="submit" class="btn btn-success btn-lg" (click)="onNextClick()">
+                Next
+            </button>
+        </div>
+    </div>
+
+
+
+

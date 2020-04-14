@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RmapiService } from 'src/app/rmapi.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Character } from 'src/app/character';
-import { DirectoryComponent } from 'src/app/directory-page/directory/directory.component';
+import { DirectoryComponent } from 'src/app/directory/directory.component';
 
 @Component({
   selector: 'app-search-form',

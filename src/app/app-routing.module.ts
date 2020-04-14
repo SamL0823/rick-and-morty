@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SearchPageComponent } from './search-page/search-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { DirectoryPageComponent } from './directory-page/directory-page.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
+import { DirectoryComponent } from './directory/directory.component';
+import { SearchFormComponent } from './search-page/search-form/search-form.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
     {
         path: 'search',
-        component: SearchPageComponent
+        component: SearchFormComponent
     },
     {
         path: '',
@@ -16,7 +17,7 @@ const routes: Routes = [
     },
     {
         path: 'directory',
-        component: DirectoryPageComponent
+        component: DirectoryComponent
     },
     {
         path: 'favorites',
