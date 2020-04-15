@@ -7,7 +7,7 @@ import { DirectoryComponent } from 'src/app/directory/directory.component';
 @Component({
   selector: 'app-search-form',
   templateUrl: './search-form.component.html',
-  styleUrls: ['./search-form.component.css']
+  styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
   public characterSearchForm: FormGroup;
@@ -22,7 +22,8 @@ export class SearchFormComponent implements OnInit {
 
   ngOnInit() {
     this.characterSearchForm = this.formBuilder.group({
-      characterData: ["", Validators.required]
+      characterData: ["", Validators.required],
+      nameInput: ['', Validators.required]
     });
     
   }

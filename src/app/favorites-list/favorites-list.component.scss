@@ -1,0 +1,14 @@
+/* .container{
+  width: auto;
+  position: relative;
+} */
+h1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    margin: auto;
+    display: block;
+}
+// used a global scss variable in styles.scss

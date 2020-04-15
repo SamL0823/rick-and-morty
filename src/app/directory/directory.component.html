@@ -17,48 +17,65 @@
         <td>{{character.gender}}</td>
     </tr>
 </table> -->
-<h2 class="text-center">All Characters</h2>
+<h1 class="text-center">All Characters</h1>
+
+    <!-- I think this is sloppy, and there's probably a better way, but what I have two ngIf elseBlock statements
+    controlled by a "click" bool inside of a main ngIf elseBlock controlled by a mainBool.
+
+    In order to access the paginated responses from the API, I had to access each initial responses "next" or "prev"
+    properties which defined the corresponding urls.
+
+    I wound up with 3 variables to contain data; allData(the initial response), nextData, and prevData
+    and here is where I iterate through each of them depending on the status of main Bool and click. -->
+
     <div class="container text-center" *ngIf="mainBool, else elseBlock">      
+
         <div class= "text-center" *ngIf="click, else elseBlock">
                 <!-- the data we need is in a nested array called results -->
-              <li *ngFor="let character of allData?.results" (click)="onSelect(character)">
+              <li  class="dropdown-toggle" *ngFor="let character of allData?.results" (click)="onSelect(character)">
                   <!-- i like the badges they look cute -->
-                <span class="badge">{{character.name}}</span>
+                <span id="characterDropdown" class="badge dropdown-toggle"  (click)="character.selected = true">{{character.name}}</span>
+                <span id="addbtn" class="badge" *ngIf="this.character.selected === true" (click)="getSelectedCharacter()"> Add to Favorites</span>
+                <!-- <div id="dropdown" class="dropdown-menu" aria-labelledby="characterDropdown" *ngIf="character.selected">
+                    <a class="dropdown-item" href="#">Add To Favorites</a>
+                </div> -->
               </li>
         </div>
+
         <ng-template #elseBlock>
-                <!-- the data we need is in a nested array called results -->
-              <li *ngFor="let character of nextData?.results" (click)="onSelect(character)">
+              <li *ngFor="let character of nextData?.results" (click)="onSelect(character)" >
                   <!-- i like the badges they look cute -->
                 <span class="badge">{{character.name}}</span>
               </li>
         </ng-template>
+
     </div>
+
         <ng-template #elseBlock>
             <div class="text-center" *ngIf="click, else elseBlock">
-                    <!-- the data we need is in a nested array called results -->
-                  <li *ngFor="let character of allData?.results" (click)="onSelect(character)">
-                      <!-- i like the badges they look cute -->
+                  <li *ngFor="let character of allData?.results" (click)="onSelect(character)" >
                     <span class="badge">{{character.name}}</span>
                   </li>
             </div>
             <ng-template #elseBlock>
                 <div class="text-center">
-                    <!-- the data we need is in a nested array called results -->
-                    <li *ngFor="let character of prevData?.results" (click)="onSelect(character)">
-                        <!-- i like the badges they look cute -->
+                    <li *ngFor="let character of prevData?.results" (click)="onSelect(character)" >
                     <span class="badge">{{character.name}}</span>
                     </li>
                 </div>                  
             </ng-template>
         </ng-template>
+
+
     <div class="container text-center">
-        <div>
-            <button type="submit" class="btn btn-success btn-lg" (click)="onPrevClick()">
+        <div class="btnholder">
+            <button id="prevbtn" type="submit" class="btn btn-lg" (click)="onPrevClick()">
                 Prev
             </button>
-            <span>{{pageCounter}}</span>
-            <button type="submit" class="btn btn-success btn-lg" (click)="onNextClick()">
+            <!-- I wanted to tie the pageCounter variable to the pageIterator variable in RmapiService,
+            but as of now the two are seperate. Managed to make this unnoticable to the user, but I don't like it. -->
+            <span class="$pageCounter">{{pageCounter}}</span>
+            <button id="nextbtn" type="submit" class="btn btn-lg" (click)="onNextClick()">
                 Next
             </button>
         </div>

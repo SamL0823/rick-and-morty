@@ -9,18 +9,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { SearchFormComponent } from './search-page/search-form/search-form.component';
-import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
+import { SearchFormComponent } from './search-form/search-form.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DirectoryComponent } from './directory/directory.component';
-import { FavoritesListComponent } from './favorites-page/favorites-list/favorites-list.component';
+import { FavoritesListComponent } from './favorites-list/favorites-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     SearchFormComponent,
-    FavoritesPageComponent,
     NavBarComponent,
     DirectoryComponent,
     FavoritesListComponent,
@@ -34,6 +32,7 @@ import { FavoritesListComponent } from './favorites-page/favorites-list/favorite
   ],
   providers: [
     RmapiService,
+    DirectoryComponent
   ],
   bootstrap: [AppComponent]
 })

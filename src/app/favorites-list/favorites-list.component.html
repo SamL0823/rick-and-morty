@@ -1,0 +1,35 @@
+
+
+
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-4">
+            <app-directory></app-directory>  
+        </div>
+             
+        <div class="col-md-8 text-center">
+            <h1>Favorites</h1>
+            <div>
+                <div *ngIf="favCharacters.length === 1">
+            
+                    <ul>
+                        <li *ngFor="let character of favCharacters"><span>{{character.name}}</span></li>
+                    </ul>
+                
+                </div>   
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div class="col-md-4"></div>
+<div class="col-md-8 text-center">
+    <button id="delete" type="submit" class="btn btn-lg">
+        Delete
+    </button>
+</div>
+<div class="container-fluid">
+    
+</div>
+    
+

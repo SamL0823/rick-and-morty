@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h3 class="text-center my-4"> Search for Characters</h3>
+
+            <form [formGroup]="characterSearchForm" (ngSubmit)="getCharacterFromApi(characterSearchForm.value)" >
+                <div class="form-group">
+
+                    <!-- was able to add event on "Enter" keystroke, so user has option to "click" or press "Enter" -->
+                        <input id="nameInput" class="form-control" type="text" id="characterNameInput" aria-describedby="characterNameInput" placeholder="Please enter a name"
+                    [formControl]="nameInput" required ng-keyup="$event.keyCode === 13 getCharacterFromApi(characterSearchForm.value): null"/>
+                    <!-- this is simple but took me a while.  validation was a little trickier doing it on my own. need practice -->
+                    <div class="alert alert-danger" *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">
+                        <div class="text-center" *ngIf="nameInput.errors.required">
+                            Please enter a name
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg">
+                        Search Characters
+                    </button>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+            <h3 class="text-center my-4">Character Details</h3>
+
+            <!-- need a way to click each result here and show either an "Add to Favorites" or "More Details".  
+            "More Details" could route to a "Character Details" page that maybe gives a prettier layout for 
+            a single character and also return other properties like status, origin, location, episodes featured, etc -->
+            <div class="text-center" *ngIf="this.characterData">               
+                <section class="characterRows" *ngFor="let data of characterData">
+                    <div id="details">
+                        <li>Name: {{data.name}}</li>
+                        <li>Status: {{data.status}}</li>
+                        <li>Species: {{data.species}}</li>
+                        <li>Gender: {{data.gender}}</li>
+                        <li>Origin: {{data.origin.name}}</li>
+                     </div>
+                     <div >
+                        <img src="{{data.image}}" alt="{{data.image}}">
+                     </div>
+                </section>
+            </div>
+    </div>
+</div>
+
+
