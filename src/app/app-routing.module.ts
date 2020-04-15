@@ -4,6 +4,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { FavoritesListComponent } from './favorites-list/favorites-list.component';
+import { componentFactoryName } from '@angular/compiler';
+import { CharacterViewComponent } from './character-view/character-view.component';
 
 const routes: Routes = [
     {
@@ -21,6 +23,10 @@ const routes: Routes = [
     {
         path: 'favorites',
         component: FavoritesListComponent
+    },
+    {
+        path: 'character',
+        component: CharacterViewComponent
     }
 ];
 

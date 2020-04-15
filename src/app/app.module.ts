@@ -13,6 +13,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { DirectoryComponent } from './directory/directory.component';
 import { FavoritesListComponent } from './favorites-list/favorites-list.component';
+import { CharacterViewComponent } from './character-view/character-view.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FavoritesListComponent } from './favorites-list/favorites-list.componen
     NavBarComponent,
     DirectoryComponent,
     FavoritesListComponent,
+    CharacterViewComponent,
   ],
   imports: [
     BrowserModule,

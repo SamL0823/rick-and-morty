@@ -17,3 +17,19 @@ li{
     flex: 1;
 }
 // used a global scss variable in styles.scss
+.alert{
+    padding: 10;
+}
+#details{
+    text-align: center;
+    padding-top: 50px;
+}
+#detailsList{
+    font-size: 20px;
+}
+section{
+    margin: 10px;
+}
+section:hover{
+    cursor: pointer;
+}

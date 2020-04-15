@@ -1,7 +1,17 @@
 .img-container{
     text-align: center;
 }
-.container{
-    margin: 10px;
-}
+
  // used a global scss variable in styles.scss
+ #gif1{
+     display: block;
+     height: 250px;
+ }
+ .row{
+     margin: auto;
+ }
+ img{
+     max-width: 100%;
+     max-height: 100%;
+     display: block;
+ }
