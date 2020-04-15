@@ -27,8 +27,8 @@
 
     I wound up with 3 variables to contain data; allData(the initial response), nextData, and prevData
     and here is where I iterate through each of them depending on the status of main Bool and click. -->
-
-    <div class="container text-center" *ngIf="mainBool, else elseBlock">      
+<div class="container text-center">
+    <div *ngIf="mainBool, else elseBlock">      
 
         <div class= "text-center" *ngIf="click, else elseBlock">
                 <!-- the data we need is in a nested array called results -->
@@ -66,8 +66,7 @@
             </ng-template>
         </ng-template>
 
-
-    <div class="container text-center">
+    <div >
         <div class="btnholder">
             <button id="prevbtn" type="submit" class="btn btn-lg" (click)="onPrevClick()">
                 Prev
@@ -81,6 +80,8 @@
         </div>
     </div>
 
+</div>
+    
 
 
 

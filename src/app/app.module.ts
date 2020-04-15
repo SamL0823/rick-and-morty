@@ -31,8 +31,7 @@ import { FavoritesListComponent } from './favorites-list/favorites-list.componen
     AppRoutingModule,
   ],
   providers: [
-    RmapiService,
-    DirectoryComponent
+    RmapiService
   ],
   bootstrap: [AppComponent]
 })

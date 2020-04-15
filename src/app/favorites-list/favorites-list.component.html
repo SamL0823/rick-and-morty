@@ -1,17 +1,17 @@
 
 
 
-<div class="container"> 
+<div class="container container-fluid"> 
     <div class="row">
-        <div class="col-md-4">
-            <app-directory></app-directory>  
+        <div class="col-md-6">
+            <app-directory (addBtnClicked)="addToFavorites()"></app-directory>  
         </div>
              
-        <div class="col-md-8 text-center">
+        <div class="col-md-6 text-center">
             <h1>Favorites</h1>
             <div>
                 <div *ngIf="favCharacters.length === 1">
-            
+            <!-- cant this this to work yet. having trouble getting the selectedCharacter variable data from directory -->
                     <ul>
                         <li *ngFor="let character of favCharacters"><span>{{character.name}}</span></li>
                     </ul>
@@ -22,8 +22,8 @@
         </div>
     </div>
 </div>
-<div class="col-md-4"></div>
-<div class="col-md-8 text-center">
+<div class="col-md-6"></div>
+<div class="col-md-6 text-center">
     <button id="delete" type="submit" class="btn btn-lg">
         Delete
     </button>

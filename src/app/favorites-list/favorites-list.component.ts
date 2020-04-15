@@ -9,16 +9,20 @@ import { DirectoryComponent } from 'src/app/directory/directory.component';
 })
 export class FavoritesListComponent implements OnInit {
   favCharacters: Character[] = [];
+  
+  constructor() { }
 
-  constructor(private directory: DirectoryComponent) { }
+  incomingCharacter: Character = new Character();
 
   ngOnInit(){
   
   }
 
-  addToFavorites(value: Character) {
-    this.favCharacters.push(value);
-    console.log(this.favCharacters);
+  addToFavorites(value: any ) {
+    console.log('add to favorites function called');
+    this.incomingCharacter = value;
+    console.log(this.incomingCharacter);
+    this.favCharacters.push(this.incomingCharacter);
   }
  
     
