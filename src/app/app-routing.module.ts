@@ -25,7 +25,7 @@ const routes: Routes = [
         component: FavoritesListComponent
     },
     {
-        path: 'character',
+        path: 'character-view',
         component: CharacterViewComponent
     }
 ];

@@ -6,4 +6,16 @@
         </div>
     </div>
 </div> -->
-<p>character view works</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-directory (characterSelected)="getCurrentCharacter($event)"></app-directory>
+        </div>
+       
+        <div class="col-md-6">
+           <section>
+                <img src="{{this.currentCharacter.image}}" alt="">
+           </section>
+        </div>
+    </div>
+</div>

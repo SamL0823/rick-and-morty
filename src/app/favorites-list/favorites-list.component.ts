@@ -18,11 +18,11 @@ export class FavoritesListComponent implements OnInit {
   
   }
 
+  // I need a function like this to take the selectedCharacter data from directory to character view
   addToFavorites(value: Character ) {
-    console.log(value);
     this.incomingCharacter = value; 
-    console.log(this.incomingCharacter);
     this.favCharacters.push(this.incomingCharacter);
+    console.log(this.favCharacters);
   }
  
     

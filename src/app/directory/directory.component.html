@@ -34,13 +34,13 @@
 
                 <div class= "text-center" *ngIf="click, else elseBlock">
                         <!-- the data we need is in a nested array called results -->
-                      <li  class="dropdown-toggle" *ngFor="let character of allData?.results" (click)="onSelect(character)">
+                      <li  class="dropdown-toggle" *ngFor="let character of allData?.results" (click)="onSelect(character)"  (click)="sendSelectedCharacterToCharView()">
                           <!-- i like the badges they look cute -->
                         <span id="characterDropdown" class="badge dropdown-toggle"  (click)="character.selected = true">{{character.name}}</span>
                         
                         <!-- I originally wanted a dropdown to appear when clicking on a character, but couldn't get it to work -->
                         
-                        <span id="addbtn" class="badge" *ngIf="this.character.selected === true" (click)="getSelectedCharacter()"> Add to Favorites</span>
+                        <span id="addbtn" class="badge" *ngIf="this.character.selected === true" (click)="sendSelectedCharacterToFavList()"> Add to Favorites</span>
                         <!-- <div id="dropdown" class="dropdown-menu" aria-labelledby="characterDropdown" *ngIf="character.selected">
                             <a class="dropdown-item" href="#">Add To Favorites</a>
                         </div> -->
@@ -48,7 +48,7 @@
                 </div>
         
                 <ng-template #elseBlock>
-                      <li *ngFor="let character of nextData?.results" (click)="onSelect(character)" >
+                      <li *ngFor="let character of nextData?.results" (click)="onSelect(character)" (click)="sendSelectedCharacterToCharView()" >
                           <!-- i like the badges they look cute -->
                         <span class="badge">{{character.name}}</span>
                       </li>
@@ -58,13 +58,13 @@
         
                 <ng-template #elseBlock>
                     <div class="text-center" *ngIf="click, else elseBlock">
-                          <li *ngFor="let character of allData?.results" (click)="onSelect(character)" >
+                          <li *ngFor="let character of allData?.results" (click)="onSelect(character)" (click)="sendSelectedCharacterToCharView()" >
                             <span class="badge">{{character.name}}</span>
                           </li>
                     </div>
                     <ng-template #elseBlock>
                         <div class="text-center">
-                            <li *ngFor="let character of prevData?.results" (click)="onSelect(character)" >
+                            <li *ngFor="let character of prevData?.results" (click)="onSelect(character)" (click)="sendSelectedCharacterToCharView()" >
                             <span class="badge">{{character.name}}</span>
                             </li>
                         </div>                  
@@ -87,6 +87,6 @@
         </div>
 
     
-
+<!-- I want to add my character view here, so when u click a character, you see some details -->
 
 

@@ -32,6 +32,8 @@ export class DirectoryComponent implements OnInit {
   public selectedCharacter: Character = new Character();
 
   @Output() addBtnClicked: EventEmitter<any> = new EventEmitter<any>();
+  @Output() characterSelected: EventEmitter<any> = new EventEmitter<any>();
+
 
   onSelect(character: Character): void {
     if(this.selectedCharacter){
@@ -53,7 +55,6 @@ export class DirectoryComponent implements OnInit {
       else{
         this.pageCounter = 1;
       }     
-      console.log(this.pageCounter);
     })
   }
 
@@ -71,10 +72,13 @@ export class DirectoryComponent implements OnInit {
     })
   }
 
-  getSelectedCharacter() {
-    console.log(this.selectedCharacter)
+  sendSelectedCharacterToFavList() {
     this.addBtnClicked.emit(this.selectedCharacter);
     this.selectedCharacter.selected = false;
+  }
+
+  sendSelectedCharacterToCharView() {
+    this.characterSelected.emit(this.selectedCharacter);
   }
 
 

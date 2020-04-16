@@ -1,11 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Character } from 'src/app/character';
-import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { ɵangular_packages_platform_browser_dynamic_platform_browser_dynamic_a } from '@angular/platform-browser-dynamic';
-import { url } from 'inspector';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -35,7 +30,7 @@ dataHold: any;
     return this.apiData;
   }
  
-//  the data I needed to retrieve is in a nested array and is paginated, so when I call this url
+//  the data I needto retrieve is in a nested array and is paginated, so when I call this url
 //  I get two objects; info & results. The info object contains a "next" and a "prev" property with
 //  a corresponding url.
 
