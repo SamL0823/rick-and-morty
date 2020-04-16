@@ -18,9 +18,9 @@ export class FavoritesListComponent implements OnInit {
   
   }
 
-  addToFavorites(value: any ) {
-    console.log('add to favorites function called');
-    this.incomingCharacter = value;
+  addToFavorites(value: Character ) {
+    console.log(value);
+    this.incomingCharacter = value; 
     console.log(this.incomingCharacter);
     this.favCharacters.push(this.incomingCharacter);
   }

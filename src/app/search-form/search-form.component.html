@@ -41,7 +41,7 @@
             <div class="text-center" *ngIf="this.characterData">               
 
                 <!-- I think I'd like each section to be clickable  -->
-                <section class="characterRows" *ngFor="let data of characterData" routerLink="/character" routerLinkActive="active">
+                <section class="characterRows" *ngFor="let data of characterData" routerLink="/character" routerLinkActive="active" (click)=grabCharacter(data)>
                     <div id="details" >
                         <div id="detailsList">
                             <li>Name: {{data.name}}</li>

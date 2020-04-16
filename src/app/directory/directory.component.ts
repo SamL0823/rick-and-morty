@@ -23,7 +23,7 @@ export class DirectoryComponent implements OnInit {
 
   ngOnInit() {
     this._rmapiservice.getAllData().subscribe(data => {
-      this.allData = data, error => console.log('Server error')
+      this.allData = data, error => console.log('Server error');
       // console.log(this.allData.info);   
     })
     
@@ -31,7 +31,7 @@ export class DirectoryComponent implements OnInit {
 
   public selectedCharacter: Character = new Character();
 
-  @Output() addBtnClicked = new EventEmitter();
+  @Output() addBtnClicked: EventEmitter<any> = new EventEmitter<any>();
 
   onSelect(character: Character): void {
     if(this.selectedCharacter){
@@ -74,6 +74,7 @@ export class DirectoryComponent implements OnInit {
   getSelectedCharacter() {
     console.log(this.selectedCharacter)
     this.addBtnClicked.emit(this.selectedCharacter);
+    this.selectedCharacter.selected = false;
   }
 
 

@@ -27,8 +27,7 @@
 
     I wound up with 3 variables to contain data; allData(the initial response), nextData, and prevData
     and here is where I iterate through each of them depending on the status of main Bool and click. -->
-<div class="container">
-    <div class="row">
+
         <div class="text-center">
             <h1 class="text-center">All Characters</h1>
             <div *ngIf="mainBool, else elseBlock">      
@@ -38,6 +37,9 @@
                       <li  class="dropdown-toggle" *ngFor="let character of allData?.results" (click)="onSelect(character)">
                           <!-- i like the badges they look cute -->
                         <span id="characterDropdown" class="badge dropdown-toggle"  (click)="character.selected = true">{{character.name}}</span>
+                        
+                        <!-- I originally wanted a dropdown to appear when clicking on a character, but couldn't get it to work -->
+                        
                         <span id="addbtn" class="badge" *ngIf="this.character.selected === true" (click)="getSelectedCharacter()"> Add to Favorites</span>
                         <!-- <div id="dropdown" class="dropdown-menu" aria-labelledby="characterDropdown" *ngIf="character.selected">
                             <a class="dropdown-item" href="#">Add To Favorites</a>
@@ -83,11 +85,6 @@
                 </div>
             </div>
         </div>
-        
-        
-    </div>
-    
-</div>
 
     
 

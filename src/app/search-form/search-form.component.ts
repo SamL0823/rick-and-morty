@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RmapiService } from 'src/app/rmapi.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Character } from 'src/app/character';
@@ -13,6 +13,11 @@ export class SearchFormComponent implements OnInit {
   public characterSearchForm: FormGroup;
   public characterData: any;
   nameInput = new FormControl('');
+  
+  public grabbedCharacter: Character = new Character();
+
+  @Output() characterClicked = new EventEmitter();
+
   
 
   constructor(
@@ -34,6 +39,23 @@ export class SearchFormComponent implements OnInit {
       console.log(this.characterData);
     });
 
+  }
+
+  grabCharacter(character: Character): void{
+    this.grabbedCharacter = character;
+  }
+  // onSelect(character: Character): void {
+  //   if(this.selectedCharacter){
+  //     this.selectedCharacter.selected = false;
+  //   }
+  //   this.selectedCharacter = character;
+  //   this.selectedCharacter.selected = true;
+  //   console.log(this.selectedCharacter);
+  // }
+
+  getSelectedCharacter() {
+    console.log(this.grabbedCharacter)
+    this.characterClicked.emit(this.grabbedCharacter);
   }
 
 
