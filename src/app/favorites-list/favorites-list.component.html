@@ -18,14 +18,14 @@
                 <div *ngIf="favCharacters">
             <!-- cant this this to work yet. having trouble getting the selectedCharacter variable data from directory -->
                   
-                        <li *ngFor="let character of favCharacters"><span>{{character.name}}</span></li>
+                        <li *ngFor="let character of favCharacters" (click)="onSelect(character)"><span>{{character.name}}</span></li>
                     
                 
                 </div>   
                 
             </div>
             <hr>
-            <button id="delete" type="submit" class="btn btn-lg">
+            <button id="delete" type="submit" class="btn btn-lg" (click)="delete()">
                 Delete
             </button>
             

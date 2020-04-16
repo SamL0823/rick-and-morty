@@ -13,12 +13,13 @@ export class FavoritesListComponent implements OnInit {
   constructor() { }
 
   incomingCharacter: Character = new Character();
+  selectedFavCharacter: Character = new Character();
 
   ngOnInit(){
   
   }
 
-  // I need a function like this to take the selectedCharacter data from directory to character view
+  // I need a function like this to take the selectedFavCharacter data from directory to character view
   addToFavorites(value: Character ) {
     this.incomingCharacter = value; 
     this.favCharacters.push(this.incomingCharacter);
@@ -26,7 +27,18 @@ export class FavoritesListComponent implements OnInit {
   }
  
     
-  
+  onSelect(character: Character): void {
+    if(this.selectedFavCharacter){
+      this.selectedFavCharacter.selected = false;
+    }
+    this.selectedFavCharacter = character;
+    console.log(this.selectedFavCharacter);
+  }
+  delete(){
+    var a = this.favCharacters.findIndex(element => element.name === this.selectedFavCharacter.name);
+    console.log(a);
+    this.favCharacters.splice(a, 1);    
+  }
 
 
   // onPrevClick(){
