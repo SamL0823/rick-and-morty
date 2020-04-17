@@ -7,16 +7,17 @@
             <!-- attempting to pass data from directory to fav list -->
             <app-directory (addBtnClicked)="addToFavorites($event)"></app-directory>  
         </div>
-        <div class="col-md-4">
+        <div class="col-md-5 text-center">
             <img id="bootyshakingrick" src="https://media0.giphy.com/media/l378w2NKt3URm6w5W/giphy.webp?cid=ecf05e4793f19cb64a7d79da54921471db873e7d5ba8795d&rid=giphy.webp" alt="">
         </div>
              
-        <div class="col-md-4 text-center">
+        <div class="col-md-3 text-center">
             <h1>Favorites</h1>
             <div id="favholder">
                 <hr>
                 <div *ngIf="favCharacters">
-            <!-- cant this this to work yet. having trouble getting the selectedCharacter variable data from directory -->
+                    
+            <!-- selectedCharacter is retrieved from Directory and added to favCharacters array upon Add To Favorites button click  -->
                   
                         <li *ngFor="let character of favCharacters" (click)="onSelect(character)"><span>{{character.name}}</span></li>
                     
@@ -25,6 +26,9 @@
                 
             </div>
             <hr>
+
+            <!-- using splice to remove selected Character from favCharacters array -->
+
             <button id="delete" type="submit" class="btn btn-lg" (click)="delete()">
                 Delete
             </button>

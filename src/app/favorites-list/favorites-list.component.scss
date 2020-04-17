@@ -27,10 +27,12 @@ app-directory{
   height: 397px;
   text-align: center;
 }
-li{
-  list-style: none;
-}
+
 .row{
   margin-left: 50px;
   margin-right: 50px;
+}
+li:hover{
+  cursor: pointer;
+  opacity: .5;
 }
